@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <title>Desafio 2</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <div id="menu">
+        <ul id="ul">
+
+        </ul>
+    </div>
+
+<script>
+
+//Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+//● Diego
+//● Gabriel
+//● Lucas
+
+//A partir do seguinte vetor:
+var nomes = ["Diego", "Gabriel", "Lucas"];
+
+function addUL(item) {
+    var ulElement = document.querySelector("ul");
+    var liElement = document.createElement("li");
+    liElement.appendChild(document.createTextNode(item));
+    ulElement.appendChild(liElement);
+}
+
+var i = 0;
+while(nomes.length > i ){
+    addUL(nomes[i]);
+    i++;
+}
+
+</script>
+
+</body>
+</html>

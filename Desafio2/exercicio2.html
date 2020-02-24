@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <title>Desafio 2</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+    <div id="app">
+        <button id="botao" onclick="criarQuadrado()">press</button>
+    </div>
+
+<script>
+
+//Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+//algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+
+function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function alteraCor(){
+    console.log("mouse in")
+    var newColor = getRandomColor(); // #E943F0
+    this.style.backgroundColor = newColor;
+
+    //var box = document.querySelector('.box');
+    //box.style.backgroundColor = newColor;
+}
+
+function voltaCor (){
+    console.log("mouse out")
+    this.style.backgroundColor = '#f00';
+
+    //var box = document.querySelector('.box');
+    //box.style.backgroundColor = '#f00';
+}
+
+function criarQuadrado(){
+    var boxElement = document.createElement('div');
+    boxElement.id = 'box';
+    boxElement.className = 'box';
+    boxElement.onmouseenter = alteraCor;
+    boxElement.onmouseout = voltaCor;
+
+    boxElement.style.height = "100px";
+    boxElement.style.width = "100px";
+    boxElement.style.backgroundColor = '#f00';
+
+    var divElement = document.querySelector('#app');
+
+    divElement.appendChild(boxElement);
+}
+
+</script>
+
+</body>
+</html>

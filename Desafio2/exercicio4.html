@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <title>Desafio 2</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <div id="menu">
+        <ul id="ul">
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Adicionar</button>
+        </ul>
+    </div>
+
+<script>
+//Seguindo o resultado do exercício anterior adicione um input em tela e um botão:
+
+//Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+//nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+//demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique
+
+function adicionar(){
+    var nomeElement = document.querySelector("input").value
+    addUL(nomeElement)
+}
+
+function addUL(item) {
+    var ulElement = document.querySelector("ul");
+    var liElement = document.createElement("li");
+    liElement.appendChild(document.createTextNode(item));
+    ulElement.appendChild(liElement);
+}
+
+var nomes = ["Diego", "Gabriel", "Lucas"];
+var i = 0;
+while(nomes.length > i ){
+    addUL(nomes[i]);
+    i++;
+}
+
+</script>
+
+</body>
+</html>
